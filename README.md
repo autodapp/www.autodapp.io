@@ -1,7 +1,7 @@
 # AutoDapp
 
-Built with [Next.js](https://nextjs.org/), configured for static export
-(`output: "export"` in `next.config.js`).
+Built with [Next.js](https://nextjs.org/) and TypeScript, configured for
+static export (`output: "export"` in `next.config.ts`).
 
 ## Development
 

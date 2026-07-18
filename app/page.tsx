@@ -1,6 +1,7 @@
+import type { Metadata } from "next"
 import Billboard from "../components/billboard"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "AutoDapp",
 }
 

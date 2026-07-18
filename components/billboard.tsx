@@ -1,6 +1,7 @@
+import type { CSSProperties } from "react"
 import Image from "next/image"
 
-const heroStyle = {
+const heroStyle: CSSProperties = {
   height: "400%",
   width: "400%",
   top: "-25%",
@@ -9,7 +10,7 @@ const heroStyle = {
   backgroundImage: "url('/assets/splash.png')",
 }
 
-const hero2Style = {
+const hero2Style: CSSProperties = {
   height: "800%",
   width: "400%",
   top: "-100%",
@@ -18,7 +19,7 @@ const hero2Style = {
   backgroundImage: "url('/assets/splash.png')",
 }
 
-const contentStyle = {
+const contentStyle: CSSProperties = {
   backgroundSize: "100% auto",
   backgroundPosition: "-5px -5px",
   backgroundImage: "url('/assets/bg.svg')",

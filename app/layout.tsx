@@ -1,3 +1,5 @@
+import type { Metadata } from "next"
+import type { ReactNode } from "react"
 import { Inter } from "next/font/google"
 import Script from "next/script"
 import { siteMetadata } from "../lib/site-metadata"
@@ -5,7 +7,7 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
     default: siteMetadata.title,
@@ -23,7 +25,7 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <body className="font-sans antialiased text-gray-900">

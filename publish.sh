@@ -1,10 +1,9 @@
 #!/bin/bash
 set -e
 
-# Production build + start for the Next.js app.
-# This project no longer builds a static export deployed via gh-pages;
-# host it on any Node-capable platform (e.g. Vercel) by running:
-#   npm run build && npm run start
+# Static export build for the Next.js app (output: "export" in next.config.js).
+# The build writes static files to ./out, deployable to any static host
+# (GitHub Pages, S3, Vercel, etc). To preview the export locally:
+#   pnpm run build && pnpm run start
 
-npm run build
-npm run start
+pnpm run build

@@ -1,22 +1,24 @@
 # AutoDapp
 
-Built with [Next.js](https://nextjs.org/).
+Built with [Next.js](https://nextjs.org/), configured for static export
+(`output: "export"` in `next.config.js`).
 
 ## Development
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Build
 
 ```bash
-npm run build
-npm run start
+pnpm run build
 ```
 
-Blog posts live in `content/blog/<slug>/index.md`. Any non-markdown file
-next to a post (e.g. an image referenced as `./cover.png`) is copied into
-`public/blog/<slug>/` automatically before `dev`/`build` via
-`scripts/copy-blog-assets.mjs`.
+Writes a static site to `./out`, deployable to any static host. Preview
+the export locally with:
+
+```bash
+pnpm run start
+```

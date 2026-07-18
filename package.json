@@ -7,24 +7,22 @@
   "bugs": {
     "url": "https://github.com/autodapp/www.autodapp.io"
   },
+  "packageManager": "pnpm@10.33.0",
   "dependencies": {
-    "gray-matter": "^4.0.3",
     "next": "^16.2.10",
     "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1"
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^8.1.0",
     "@tailwindcss/postcss": "^4.3.3",
-    "@tailwindcss/typography": "^0.5.20",
     "commitlint": "^8.1.0",
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.2.10",
-    "husky": "^3.0.3",
+    "husky": "^9.1.7",
     "lint-staged": "^9.2.1",
     "prettier": "^1.19.1",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.3.3"
   },
   "homepage": "https://github.com/autodapp/www.autodapp.io#readme",
@@ -37,26 +35,18 @@
     "url": "git+https://github.com/autodapp/www.autodapp.io.git"
   },
   "scripts": {
-    "predev": "node scripts/copy-blog-assets.mjs",
+    "prepare": "husky",
     "dev": "next dev",
-    "prebuild": "node scripts/copy-blog-assets.mjs",
     "build": "next build",
-    "start": "next start",
+    "start": "serve out",
     "lint": "eslint .",
-    "format": "npm run prettier -- --write",
+    "format": "pnpm run prettier -- --write",
     "prettier": "prettier \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|mdx)\"",
-    "prettier:validate": "npm run prettier -- --list-different"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "prettier:validate": "pnpm run prettier -- --list-different"
   },
   "lint-staged": {
     "**/*.+(js|jsx|ts|tsx|json|yml|yaml|md|mdx)": [
-      "yarn format",
-      "git add"
+      "prettier --write"
     ]
   }
 }

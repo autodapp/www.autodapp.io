@@ -1,28 +1,10 @@
 #!/bin/bash
+set -e
 
-CWD=`pwd`
-REPO_NAME="autodapp.github.io"
-REPO_URL="git@github.com:autodapp/autodapp.github.io.git"
-PARENT_PATH=/tmp
-GIT_PATH=$PARENT_PATH/$REPO_NAME
+# Production build + start for the Next.js app.
+# This project no longer builds a static export deployed via gh-pages;
+# host it on any Node-capable platform (e.g. Vercel) by running:
+#   npm run build && npm run start
 
-echo "Current directory is $CWD"
-
-echo "=== Cloning Repo ==="
-cd $PARENT_PATH
-if [ -d $GIT_PATH ]; then
-  echo "github:autodapp.github.io already cloned. Pulling..."
-  cd $REPO_NAME
-  git pull
-else
-  git clone $REPO_URL
-fi
-cd $CWD
-
-echo "=== Committing Changes ==="
-cp -r $CWD/public/* $GIT_PATH/
-cd $GIT_PATH/
-git add -A .
-git commit
-echo "=== Pushing Changes ==="
-git push
+npm run build
+npm run start

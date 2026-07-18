@@ -1,5 +1,3 @@
-FROM node
-
-RUN npm install -g gatsby-cli
+FROM node:22
 
 WORKDIR /code

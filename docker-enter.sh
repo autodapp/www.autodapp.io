@@ -8,11 +8,11 @@ which docker >/dev/null || {
 }
 
 echo "===== BUILDING =====" && \
-  docker build -t gatsbyjs . && \
+  docker build -t autodapp-nextjs . && \
   echo "===== RUNNING =====" && \
   docker run --rm -t -i \
-    -p 8000:8000 \
+    -p 3000:3000 \
     -v ${CWD}:/code \
     -w /code \
-    gatsbyjs \
+    autodapp-nextjs \
     bash

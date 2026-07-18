@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@keyframes scrollSmall {
+  0% {
+    transform: rotate(-13deg) translateY(0);
+  }
+  to {
+    transform: rotate(-13deg) translateY(-639px);
+  }
+}
+
+@keyframes scrollLarge {
+  0% {
+    transform: rotate(-13deg) translateY(0);
+  }
+  to {
+    transform: rotate(-13deg) translateY(-1278px);
+  }
+}
+
+.scroll-bg {
+  animation-name: scrollSmall;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (min-width: 1024px) {
+  .scroll-bg {
+    animation-name: scrollLarge;
+    animation-duration: 35s;
+  }
+}
